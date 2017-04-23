@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Automated deploy script with Circle CI.
+
+# Exit if any subcommand fails.
+set -e
+
+# Variables
+ORIGIN_URL=`git config --get remote.origin.url`
+
+echo "Started deploying"
+
+# Checkout gh-pages branch.
+if [ `git branch | grep source` ]
+then
+  git branch -D source
+fi
+git checkout -b source
+
+# Delete and move files.
+find . -maxdepth 1 ! -name 'source' ! -name '.git' ! -name 'README.md' ! -name '.gitignore' -exec rm -rf {} \;
+mv source/_posts/* ./
+rm -R source/
+
+git add -fA
+git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
+git push -f $ORIGIN_URL source
+
+# Move back to previous branch.
+git checkout -
+
+echo "Deployed Successfully!"
+
+exit 0
