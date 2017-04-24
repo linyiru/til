@@ -5,6 +5,22 @@
 # Exit if any subcommand fails.
 set -e
 
+all_markdown_posts() {
+  find source/_posts/ -iname '*.md'
+}
+
+cleansing_yaml() {
+  title=$(grep '^title\:\(.*\)$' $1 | sed -e 's/title\:\s//g')
+  sed -i -e "/---/a # `echo $title`" $1
+  sed -i '1 { /^---/ { :a N; /\n---/! ba; d} }' $1
+}
+
+traverse_markdown_files() {
+  for md_file in $(all_markdown_posts); do
+    cleansing_yaml $md_file
+  done
+}
+
 # Variables
 ORIGIN_URL=`git config --get remote.origin.url`
 
@@ -19,7 +35,8 @@ git checkout -b source
 
 # Delete and move files.
 find . -maxdepth 1 ! -name 'source' ! -name '.git' ! -name 'README.md' ! -name '.gitignore' ! -name '.' -exec rm -rf {} \;
-find source/_posts/ -iname '*.md' -exec sed -i -e '1d;3d;s/^title\: \(.*\)$/\# \1/' {} \;
+traverse_markdown_files
+# find source/_posts/ -iname '*.md' -exec sed -i -e '1d;3d;s/^title\: \(.*\)$/\# \1/' {} \;
 mv source/circle.yml ./
 mv source/_posts/* ./
 rm -R source/
