@@ -40,7 +40,7 @@ menu:
   #categories: /categories
   #about: /about
   archives: /archives
-  tags: /tags
+  # tags: /tags
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -132,8 +132,10 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
+  GitHub: https://github.com/deduce
+  Twitter: https://twitter.com/deduce
 
 
 # Social Links Icons
@@ -147,7 +149,7 @@ social_icons:
   # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   Twitter: twitter
-  Weibo: weibo
+  # Weibo: weibo
 
 
 # Sidebar Avatar
