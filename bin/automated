@@ -18,7 +18,9 @@ fi
 git checkout -b source
 
 # Delete and move files.
-find . -maxdepth 1 ! -name 'source' ! -name '.git' ! -name 'README.md' ! -name '.gitignore' -exec rm -rf {} \;
+find . -maxdepth 1 ! -name 'source' ! -name '.git' ! -name 'README.md' ! -name '.gitignore' ! -name '.' -exec rm -rf {} \;
+find source/_posts/ -iname '*.md' -exec sed -i -e '1d;3d;s/^title\: \(.*\)$/\# \1/' {} \;
+mv source/circle.yml ./
 mv source/_posts/* ./
 rm -R source/
 
