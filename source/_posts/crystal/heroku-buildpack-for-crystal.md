@@ -1,5 +1,6 @@
 ---
 title: Heroku Buildpack for Crystal
+date: 2017-04-24
 ---
 
 In a Crystal-based project, initialize your heroku app:

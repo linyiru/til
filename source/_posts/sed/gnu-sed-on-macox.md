@@ -1,5 +1,6 @@
 ---
 title: GNU sed on macOS
+date: 2017-04-24
 ---
 
 ``sed``(/usr/bin/sed) on macOS and GNU ``sed`` are different. How to install GNU ``sed``:

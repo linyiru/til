@@ -1,5 +1,6 @@
 ---
 title: Static Website Hexo on GitHub
+date: 2017-05-04
 ---
 
 It's easy to setup a Hexo website, there are tons of tutorials on the internet.

@@ -1,5 +1,6 @@
 ---
 title: Remove YAML Front Matter
+date: 2017-04-24
 ---
 
 There are many ways to remove YAML Front Matter, here is how I use ``sed`` to do so:
