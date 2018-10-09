@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "hexo": "^3.7.1",
-    "hexo-deployer-git": "^0.2.0",
+    "hexo-deployer-git": "^0.3.1",
     "hexo-footnotes": "^1.0.1",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
@@ -23,7 +23,7 @@
     "hexo-tag-mermaid": "^1.0.0",
     "hexo-util": "^0.6.0",
     "markdown-it-emoji": "^1.3.0",
-    "npm": "^5.8.0"
+    "npm": "^6.4.1"
   },
   "scripts": {
     "postinstall": "cp themes/_config.yml themes/next/_config.yml && cp themes/custom.styl themes/next/source/css/_variables/custom.styl && cp themes/head.swig themes/next/layout/_partials/head.swig && cp themes/post.swig themes/next/layout/_macro/post.swig"
