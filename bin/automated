@@ -36,7 +36,6 @@ git checkout -b source
 find . -maxdepth 1 ! -name 'source' ! -name '.git' ! -name 'README.md' ! -name '.gitignore' ! -name '.' -exec rm -rf {} \;
 traverse_markdown_files
 # find source/_posts/ -iname '*.md' -exec sed -i -e '1d;3d;s/^title\: \(.*\)$/\# \1/' {} \;
-mv source/circle.yml ./
 mv source/_posts/* ./
 rm -R source/
 
