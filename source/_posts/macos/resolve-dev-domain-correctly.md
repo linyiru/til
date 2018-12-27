@@ -37,7 +37,7 @@ pptr.dev.		3599	IN	A	185.199.111.153
 ;; MSG SIZE  rcvd: 101
 ```
 
-So I guess it's realted to my local settings about DNS. The solution is here: remove `/etc/resolver/dev` and done.
+So I guess it's related to my local settings about DNS. The solution is here: remove `/etc/resolver/dev` and done.
 
 The reason why there was a `etc/resolver/dev` file is I used to develop websites with a `.dev` **local** domain for testing for years. 
 
