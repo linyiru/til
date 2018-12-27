@@ -3,15 +3,15 @@ title: Remove YAML Front Matter
 date: 2017-04-24
 ---
 
-There are many ways to remove YAML Front Matter, here is how I use ``sed`` to do so:
+There are many ways to remove YAML Front Matter, here is how I use `sed` to do so:
 
-```
+```shell
 sed -i '1 { /^---/ { :a N; /\n---/! ba; d} }' INPUT_FILE
 ```
 
 Explanation:
 
-```
+```shell
 1 {              # in the first line
   /^---/ {       # if it starts with ---
     :a           # jump label for looping
@@ -27,7 +27,7 @@ Explanation:
 
 Furthermore, if you wanna keep some useful metadata in front matter like post title in blogging system, you can do so:
 
-```
+```shell
 title=$(grep '^title\:\(.*\)$' $1 | sed -e 's/title\:\s//g')
 sed -i -e "/---/a # `echo $title`" $1
 sed -i '1 { /^---/ { :a N; /\n---/! ba; d} }' $1
