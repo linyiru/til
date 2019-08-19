@@ -106,6 +106,8 @@
   };
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.2.3/mermaid.min.js" integrity="sha256-4s3fF5e1iWRLtiV7mRev7n17oALqqDHbWrNqF3/r7jU=" crossorigin="anonymous"></script>
+
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
 {% if theme.canonical %}
   <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
