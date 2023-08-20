@@ -25,7 +25,6 @@ jobs:
           key: til-{{ checksum "package.json" }}     
       - run: git config --global user.name "Circle CI"
       - run: git config --global user.email "deduce@gmail.com"
-      - run: hexo clean
       - run: hexo generate
       - run: hexo deploy
       - run: bin/automated
