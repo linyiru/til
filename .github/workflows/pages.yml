@@ -37,4 +37,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
       - name: Publish Readable Branch
-        run: bin/automated
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bin/automated
