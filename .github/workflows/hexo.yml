@@ -45,18 +45,14 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-      # - name: Publish Readable Branch
-      #   run: |
-      #     git config --global user.name "GitHub Actions"
-      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     bin/automated
-      ## Running a bash script with Github Secret token
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to GitHub Pages        
+      - name: Publish Readable Branch
         run: |
-          bin/automated
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bin/automated    
 
   # Deployment job
   deploy:
