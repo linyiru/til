@@ -51,10 +51,10 @@ jobs:
       #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       #     bin/automated
       ## Running a bash script with Github Secret token
-      - name: Deploy to GitHub Pages
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages        
         run: |
           bin/automated
 
