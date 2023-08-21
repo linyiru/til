@@ -53,6 +53,12 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           bin/automated    
+      - name: Push changes to source branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: source
+          force: true
 
   # Deployment job
   deploy:

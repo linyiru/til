@@ -41,11 +41,11 @@ rm -R source/
 
 git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-git push -f $ORIGIN_URL source
+# git push -f $ORIGIN_URL source
 
 # Move back to previous branch.
-git checkout -
+# git checkout -
 
-echo "Deployed Successfully!"
+echo "Build Successfully!"
 
 exit 0
