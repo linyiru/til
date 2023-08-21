@@ -30,7 +30,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -46,10 +45,17 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-      - name: Publish Readable Branch
+      # - name: Publish Readable Branch
+      #   run: |
+      #     git config --global user.name "GitHub Actions"
+      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #     bin/automated
+      ## Running a bash script with Github Secret token
+      - name: Deploy to GitHub Pages
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           bin/automated
 
   # Deployment job
