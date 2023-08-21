@@ -1,6 +1,6 @@
 # Today I learned
 
-![GitHub Actions](https://github.com/linyiru/til/actions/workflows/pages.yml/badge.svg)
+![GitHub Actions](https://github.com/linyiru/til/actions/workflows/hexo.yml/badge.svg)
 
 There are 3 different branches in this repository:
 
